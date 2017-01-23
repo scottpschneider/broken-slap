@@ -29,7 +29,7 @@ function GameService() {
     };
 
     dataStore.attack = function (type) {
-        target.health -= target.attacks[type] * this.addMods()
+        target.health -= target.attacks[type] * addMods()
         if (target.health < 0) {
             target.health = 0
         }
@@ -61,7 +61,7 @@ function GameService() {
         target.items.push(items[item])
     };
 
-    dataStore.addMods = function () {
+    function addMods() {
         var total = 1;
         for (var index = 0; index < target.items.length; index++) {
             var element = target.items[index];
