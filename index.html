@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>SlapGame</title>
+</head>
+
+<body>
+    <div class="panel panel-default">
+        <div class="panel-head">
+            <span>Health:<span id="health">--</span></span>
+            <br>
+            <span>Name:<span id="name">--</span></span>
+            <br>
+            <span>Hits:<span id="hits">--</span></span>
+        </div>
+        <div class="panel-body">
+                <img src="http://rs484.pbsrc.com/albums/rr207/kalir13/scarecrow2.gif~c200">
+                <button type="button" class="btn btn-primary" onclick="attack('slap')">Slap!</button>
+                <button type="button" class="btn btn-warning" onclick="attack('punch')">Punch!</button>
+                <button type="button" class="btn btn-danger" onclick="attack('kick')">Kick!</button>
+        </div>
+        <div id="play-space">
+        </div>
+    </div>
+    <div id="items">
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
