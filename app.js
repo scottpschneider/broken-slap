@@ -1,30 +1,42 @@
+//SERVICE private
 var target = new Target("Scarecrow", 100, 1, 5, 10, 200);
 
+//Service private
 var items = {
     shield: new Item('Shield', -0.3, "This is a way cool shield"),
     crows: new Item("Crows", 0.5, "More CROWS!"),
-    straw: new Item("Straw", -0.2, "Stronger straw")
+    straw: new Item("Straw", -0.2, "Stronger straw"),
+    fire: new Item("Fire", 1.6, "its super effective")
 };
 
+//DATA service private
 function Target(name, health, slap, punch, kick, roundhouse) {
     this.name = name;
     this.health = health;
     this.attacks = {
-        "slap": slap,
-        "punch": punch,
-        "kick": kick,
-        "roundhouse": roundhouse
+        slap: slap,
+        punch: punch,
+        kick: kick,
+        roundhouse: roundhouse
     };
     this.items = []
     this.hits = 0
 };
 
+//service private
 function Item(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
 };
 
+//controller???????///SERVICE
+//WE NEED THIS IN TWO PLACES\
+
+//attack attack
+//separation of concerns
+//SERVICE public 
+//Conroller public
 function attack(type) {
     target.health -= target.attacks[type] * addMods()
     if (target.health < 0) {
@@ -36,11 +48,12 @@ function attack(type) {
     target.hits += 1
     update()
 }
-
+//both public
 function giveItem(item) {
     target.items.push(items[item])
 };
 
+//Service private
 function addMods() {
     var total = 1;
     for (var index = 0; index < target.items.length; index++) {
@@ -50,6 +63,7 @@ function addMods() {
     return total
 };
 
+//controller manipulates the DOM private called once
 function drawItems() {
     var template = ``
     for (var item in items) {
@@ -58,6 +72,7 @@ function drawItems() {
     document.getElementById('items').innerHTML = template
 }
 
+//CONTROLLER private 
 function update() {
     document.getElementById('health').innerHTML = target.health
     document.getElementById('name').innerHTML = target.name
