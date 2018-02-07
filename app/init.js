@@ -1,5 +1,5 @@
 var app = {
     controllers: {
-        slapController: new SlapController()
+        slapController: new SlapController
     }
 }

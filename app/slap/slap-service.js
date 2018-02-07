@@ -5,7 +5,7 @@
 function SlapService() {
     // PRIVATE PARTS
     //SERVICE private
-    var target = Target("Scarecrow", 100, 1, 5, 10)
+    var target = Target("Scarecrow", 100, 1, 5)
     //Service private
     var items = {
         shield: new Item('Shield', -0.3, "This is a way cool shield"),
@@ -32,7 +32,7 @@ function SlapService() {
         this.description = description;
     
     function addMods() {
-        var total = 1;
+        var total = 0;
         for (var index = 0; index < target.items.length; index++) {
             var item = target.items[index];
             total += item.modifier

@@ -34,8 +34,7 @@ function SlapController() {
 
     // PUBLIC PARTS
     this.attack = function attack(type){
-        slapService.attack(type)
-        update()   
+        slapService.attack(type)   
     }
 
     update()
