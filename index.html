@@ -19,9 +19,10 @@
         </div>
         <div class="panel-body">
                 <img src="http://rs484.pbsrc.com/albums/rr207/kalir13/scarecrow2.gif~c200">
-                <button type="button" class="btn btn-primary" onclick="app.controllers.slapController.attack()">Slap!</button>
-                <button type="button" class="btn btn-warning" onclick="app.controllers.slapController.attack()">Punch!</button>
-                <button type="button" class="btn btn-danger" onclick="app.controllers.slapController.attack()">Kick!</button>
+                <button type="button" class="btn btn-primary" onclick="app.controllers.slapController.attack('slap')">Slap!</button>
+                <button type="button" class="btn btn-warning" onclick="app.controllers.slapController.attack('punch')">Punch!</button>
+                <button type="button" class="btn btn-danger" onclick="app.controllers.slapController.attack('kick')">Kick!</button>
+                 <button type="button" class="btn btn-danger" onclick="app.controllers.slapController.attack('Roundhouse')">Roundhouse!</button>
         </div>
         <div id="play-space">
         </div>
@@ -33,9 +34,9 @@
 
  
     
-    <script src="app/slap/slap-controller.js"></script>
     <script src="app/slap/slap-service.js"></script>
-    <script src="init.js"></script>
+    <script src="app/slap/slap-controller.js"></script>
+    <script src="app/init.js"></script>
 
 </body>
 

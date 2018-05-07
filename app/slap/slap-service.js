@@ -5,7 +5,7 @@
 function SlapService() {
     // PRIVATE PARTS
     //SERVICE private
-    var target = Target("Scarecrow", 100, 1, 5)
+    var target =  new Target("Scarecrow", 100, 1, 5., 90, 1000)
     //Service private
     var items = {
         shield: new Item('Shield', -0.3, "This is a way cool shield"),
@@ -16,7 +16,7 @@ function SlapService() {
     //DATA service private
     function Target(name, health, slap, punch, kick, roundhouse) {
         this.name = name;
-        this.health = helth;
+        this.health = health;
         this.attacks = {
             "slap": slap,
             "punch": punch,
@@ -26,22 +26,22 @@ function SlapService() {
         this.items = []
         this.hits = 0
     }
-    function Item(name, modifier, description) {
+     function Item(name, modifier, description) {
         this.name = name;
         this.modifier = modifier;
         this.description = description;
     
-    function addMods() {
-        var total = 0;
-        for (var index = 0; index < target.items.length; index++) {
-            var item = target.items[index];
-            total += item.modifier
-        }
-        return total
-        }
     }
+        function addMods() {
+            var total = 1;
+            for (var index = 0; index < target.items.length; index++) {
+                var item = target.items[index];
+                total += item.modifier
+            }
+            return total
+            }
 
-    function attack(type) {
+    this.attack = function attack(type) {
         //DO STUFF
         if (target.attacks[type]) {
             target.health -= target.attacks[type] * addMods()
@@ -50,7 +50,7 @@ function SlapService() {
     }
 
     this.getTarget = function getTarget() {
-        JSON.parse(JSON.stringify(target)) // non-primative passed by reference
+        return JSON.parse(JSON.stringify(target)) // non-primative passed by reference
         // primatives are passed by value
     }
 
